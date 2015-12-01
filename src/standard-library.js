@@ -125,7 +125,7 @@ var FixedArray = function (size) {
     }
 
     this.insertAt = function (ind, elem) {
-        if (ind >= this.length) {
+        if (ind < 0 || ind >= this.length) {
             throw new RangeError();
         } else {
             this._array[ind] = elem;
@@ -133,7 +133,7 @@ var FixedArray = function (size) {
     };
 
     this.getAt = function (ind) {
-        if (ind >= this.length) {
+        if (ind < 0 || ind >= this.length) {
             throw new RangeError();
         } else {
             return this._array[ind];
